@@ -1,24 +1,18 @@
-# README
+README.md
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+README
 
-Things you may want to cover:
+User -
+####пользователь, который будет проходить тест
 
-* Ruby version
+Admin -
+####администратор, создающий и проверяющий тесты
 
-* System dependencies
+Test -
+####тест
 
-* Configuration
+Question -
+####вопрос теста
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Answer -
+####ответ на вопросы
