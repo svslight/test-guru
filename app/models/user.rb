@@ -2,6 +2,6 @@ class User < ApplicationRecord
   has_many :user_tests
   
   def get_level_tests(level)
-    Test.select(:title).where(level: level).joins('JOIN user_tests ON test_id = tests.id')
+    Test.joins(:user_tests).where(tests: {level: level}, user_tests: {user_id: id}).pluck(:title)
   end  
 end
