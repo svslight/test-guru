@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 Answer.delete_all
 Question.delete_all
+UserTest.delete_all
 Test.delete_all
 Category.delete_all
 User.delete_all
@@ -23,9 +25,17 @@ categories = Category.create([
 ])
 
 tests = Test.create([
-  { title: 'Ruby', level: 1, author_id: users[0].id, category_id: categories[0].id },
-  { title: 'HTML', level: 0, author_id: users[0].id, category_id: categories[0].id },
-  { title: 'JS', level: 1, author_id: users[0].id, category_id: categories[1].id }
+  { title: 'CSS/HTML', level: 0, author_id: users[0].id, category_id: categories[0].id },
+  { title: 'PHP', level: 1, author_id: users[0].id, category_id: categories[1].id }, 
+  { title: 'Ruby', level: 1, author_id: users[0].id, category_id: categories[0].id }, 
+  { title: 'JavaScript', level: 1, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'Python', level: 1, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'Java', level: 2, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'R', level: 3, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'Swift', level: 4, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'Go', level: 5, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'C', level: 5, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'C++', level: 5, author_id: users[0].id, category_id: categories[1].id }  
 ])
 
 questions = Question.create([
@@ -38,23 +48,25 @@ questions = Question.create([
 ])
 
 answers = Answer.create([
-  { correct: true, question_id: questions[0].id },
-  { correct: false, question_id: questions[0].id },
+  { reply: 'Объект', correct: true, question_id: questions[0].id },
+  { reply: 'Скалярное значение', correct: false, question_id: questions[0].id },
+  { reply: 'Целое число', correct: false, question_id: questions[0].id },
+  { reply: 'Это замыкание', correct: false, question_id: questions[0].id },
   
-  { correct: true, question_id: questions[1].id },
-  { correct: false, question_id: questions[1].id },
+  { reply: 'Блок', correct: true, question_id: questions[1].id },
+  { reply: 'Связь', correct: false, question_id: questions[1].id },
   
-  { correct: true, question_id: questions[2].id },
-  { correct: false, question_id: questions[2].id },
+  { reply: 'Для создания Web-страниц', correct: true, question_id: questions[2].id },
+  { reply: 'Для создания программ', correct: false, question_id: questions[2].id },
   
-  { correct: true, question_id: questions[3].id },
-  { correct: false, question_id: questions[3].id },
+  { reply: 'Предпочтительно UTF8', correct: true, question_id: questions[3].id },
+  { reply: 'Любую', correct: false, question_id: questions[3].id },
  
-  { correct: true, question_id: questions[4].id },
-  { correct: false, question_id: questions[4].id },
+  { reply: 'Всеми', correct: true, question_id: questions[4].id },
+  { reply: 'Только Chrome', correct: false, question_id: questions[4].id },
  
-  { correct: false, question_id: questions[5].id },
-  { correct: true, question_id: questions[5].id }
+  { reply: 'Не имеет прямой доступ к ОС', correct: true, question_id: questions[5].id },
+  { reply: 'Да, имеет прямой доступ к ОС', correct: false, question_id: questions[5].id }
 ])
 
 user_tests = UserTest.create([
