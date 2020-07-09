@@ -1,0 +1,1 @@
+TestGuru::Application::config.i18n.available_locales = :ru
