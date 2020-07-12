@@ -1,0 +1,13 @@
+<h2>Вопросы теста: «<%= @test.title %>»</h2>
+
+<ul>
+  <% @test.questions.each do |question| %>
+	<li>
+      <p>(id:<%= question.id %>)  <%= question.body %></p> 
+
+      <p><%= link_to  "Ответы", question_path(question) %> |
+		<%= link_to  "Удалить", question_path(question), method: :delete, data: { confirm: 'Действительно удалить?'} %>
+	  </p>
+	</li>
+  <% end %>
+</ul>
