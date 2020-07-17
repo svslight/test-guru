@@ -5,22 +5,20 @@
   <%= @test.level %>
 </p>
 
-<p> 
+<p>
   <%= link_to 'Новый вопрос', new_test_question_path(@test.id) %>
 </p>
 
 <table>
   <tr>
-  	<th>Название</th>
+    <th>Название</th>
     <th colspan="3">Действия</th>
-  </tr>
+  </tr>  
   
-  
-  <%= render @questions %> 
-   
-</table>	
+  <%= render @questions %>   
+</table>
 
 <p>
   <%= link_to 'Назад', tests_path %>
-  <%= link_to 'Редактировать', edit_test_path(@test) %>	
+  <%= link_to 'Редактировать', edit_test_path(@test) %>
 </p>

@@ -52,7 +52,6 @@ class QuestionsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:test_id])
-    @questions = @test.questions
   end
 
   def find_question

@@ -1,19 +1,9 @@
-module QuestionsHelper
-  
+module QuestionsHelper  
   def question_header(question)
     if question.new_record?
-      "Create New '#{@test.title}' Question"
+      "Создание нового вопроса (#{@test.title}) теста."
     else
-      "Edit '#{question.test.title}' Question"
+      "Редактирование вопроса '#{question.test.title}' теста."
     end
   end
-
-  def current_year
-    Time.current.year
-  end
-
-  def github_url(author, repo)
-    link_to 'Test-Guru', "https://github.com/#{author}/#{repo}", target: '_blank'
-  end
-
 end
