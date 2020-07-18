@@ -1,0 +1,14 @@
+<tr>
+  <td><%= test.title %></td>
+  <td><%= test_level(test) %></td>  
+  <td><%= test.questions.size %></td>  
+  <td><%= test.author_id %></td>
+  <td><%= test.category_id %></td>
+  <td><%= link_to 'Открыть вопросы', test_path(test) %></td> 
+  <td><%= link_to 'Изменить', edit_test_path(test) %></td>
+  <td><%= link_to 'Удалить', 
+    test_path(test),
+    method: :delete,
+    data: { confirm: 'Действительно удалить?' } %>
+  </td>           
+</tr>
