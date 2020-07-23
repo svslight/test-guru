@@ -1,13 +1,16 @@
-<h2> Тест по курсу: «<%= Test.find(@question.test_id).title %>» </h2>
-<h4>Вопрос «<%= @question.body %>»</h4>
-<p>Варианты ответов:</p>
-
-<ul>
-  <% @question.answers.each do |answer| %>
-    <li><%= answer.reply %></li>
-  <% end %>
-</ul>
+<h1>Вопрос <%= @question.test.title %> :</h1>
 
 <p>
-  <%= link_to 'Назад', test_path %>
+  <%= @question.body %>
 </p>
+
+<h2>Ответы:</h2>
+
+<%= link_to 'Новый ответ', new_question_answer_path(@question) %>
+
+<ol>
+  <%= render @question.answers %>   
+</ol>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', test_path(@question.test) %>
