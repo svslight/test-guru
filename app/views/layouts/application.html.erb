@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <%= render 'shared/header' %>
+    
+    <% if logged_in? %>
+      <p class="nav user">Добро пожаловать! <b><%= current_user.name %></b> Guru |
+      <%= link_to 'Выход', logout_path, data: { method: :delete } %>
+      </p>
+    <% end %>
+
     <%= yield %>
     <br>
     <br>
