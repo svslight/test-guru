@@ -7,12 +7,9 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-
-      # redirect_to tests_path
-      redirect_to cookies[:path]
+      redirect_to cookies[:requested_path] || root_path
     else
       flash[:alert] = 'Введен некорректный электронный адрес или пароль'
-      # render :new
       redirect_to login_path
     end
   end

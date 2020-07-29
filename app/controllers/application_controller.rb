@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   
   def authenticate_user!
     unless current_user
-      redirect_to login_path #, alert: 'Введен некорректный электронный адрес или пароль'
-      cookies[:path] = request.path
+      redirect_to login_path
+      cookies[:requested_path] = request.path
     end
 
     cookies[:email] = current_user&.email
@@ -21,9 +21,5 @@ class ApplicationController < ActionController::Base
   
   def logged_in?
     current_user.present?
-  end
-  
-  def cookie_path(path)
-    cookies[:path] = path
   end
 end
