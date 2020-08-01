@@ -89,6 +89,10 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     loofah (2.6.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -205,6 +209,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise (~> 4.0)
   jbuilder (~> 2.7)
+  letter_opener
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.2)
   rails-i18n (~> 6.0.0)
