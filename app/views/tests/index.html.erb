@@ -1,17 +1,12 @@
 <h1>Список тестов</h1>
 
-<p>
-  <%= link_to 'Новый Тест', new_test_path %>
-</p>
-
 <table>
   <tr>
     <th>Название</th>
     <th>Уровень</th>
-    <th>Кол.вопросов</th>
-    <th colspan="4">Действия</th>
+    <th>Кол.вопросов</th> 
+    <th>Начать Тест</th>
   </tr>
 
   <%= render @tests %>
-
 </table>
