@@ -1,17 +1,15 @@
-<h1>Вопрос:</h1>
+<h2><%= t('.header') %></h2>
 
 <p>
   <%= @answer.question.body %>
 </p>
 
 <p>
-  <b>Ответ: </b>
-  <%= @answer.body %>
+  <b><%= t('.answer', title: @answer.body) %></b>
 </p>
 
 <p>
-  <b>Правильный ответ: </b>
-  <%= @answer.correct %>
+  <b><%= t('.correct', title: @answer.correct) %> </b>
 </p>
 
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t('.back'), admin_question_path(@answer.question) %>
