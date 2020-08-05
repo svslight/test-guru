@@ -21,7 +21,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.authored_tests.new(test_params)
     
     if @test.save
-      redirect_to admin_tests_path , notice: "Добавлен новый тест! Автор: #{@test.author.first_name} #{@test.author.last_name}"
+      redirect_to admin_tests_path, notice: t('.success', first_name: @test.author.first_name, last_name: @test.author.last_name )
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Admin::TestsController < Admin::BaseController
   
   def update
     if @test.update(test_params)
-      redirect_to admin_tests_path, notice: 'Тест обновлен.'
+      redirect_to admin_tests_path, notice: t('.success')
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    redirect_to admin_tests_path, notice: 'Тест удален.'
+    redirect_to admin_tests_path, notice: t('.success')
   end
 
   def start

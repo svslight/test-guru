@@ -1,10 +1,9 @@
-<h1>Новый Ответ</h1>
+<h1><%= t('.header') %></h1>
 
 <p>
-  <b>Вопрос: </b>
-  <%= @question.body %>
+  <b><%= t('.question', title: @question.body)%> </b>
 </p>
 
 <%= render 'form', answer: @answer %>
 
-<%= link_to 'Back', admin_question_path(@question) %>
+<%= link_to t('.back'), admin_question_path(@question) %>

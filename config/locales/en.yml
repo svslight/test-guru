@@ -31,3 +31,148 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      create: 'Create %{model}'
+      update: 'Update %{model}'
+      submit: 'Save %{model}'
+      submit: 'Next %{model}'
+
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        body: "Body"
+      answer:
+        body: "Answer"
+        correct: "Correct"
+
+    select:
+      prompt: "Choose category"
+
+  layouts:
+    application:
+      welcome: "Welcome! %{user_name} Guru"
+      log_out: "Log out"
+
+  shared:
+    header:
+      sign_up: "Sign up"
+      log_in: "log in"
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      actions: "Actions"
+    start:
+      begin: "Test begun '%{title}'"
+    test:
+      start: "Start"
+
+  test_passages:
+    result:
+      header: "Test %{title} Test was Completed!"
+      congratulations: "Congratulations! You succesfully complete test - %{percent} %"
+      lose: "Unfortunately you did not pass test. The success rate was - %{percent} %"
+      back: "List Tests"
+    show:
+      header: "Pass the test on the topic: %{title}"
+      counter: "Question № %{number} of %{total}"
+    update:
+      completed: "Test completed"
+
+  admin:
+    nav:
+      header: "Admin panel TestGuru."
+      welcome: "Welcome!"
+      admin_panel: "Admin panel"
+      guru: "Guru"
+      logout: "Exit"
+
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        choice: "Are you sure?"
+      new:
+        create: "Create new question test «%{title}»"
+        back: "Back"
+      edit:
+        header: "Edit question test «%{title}»" 
+        back: "Back"
+      show:
+        header: "Question Test «%{title}»:"
+        answers: "Answers:"
+        new_answer: "New answer"        
+        edit: "Edit"
+        back: "Back"
+
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        choice: "Are you sure?"
+      new:
+        header: "New Answer"
+        question: "Question: «%{title}»"
+        back: "Back"
+      show:
+        header: "Question:"
+        answer: "Answer: «%{title}»"
+        correct: "Correct: «%{title}» "
+        back: "Back"
+      edit:
+        header: "Edit answer"
+        back: "Back"
+
+    tests:
+      create:
+        success: "Test was successfully created %{first_name} %{last_name}"
+      update:
+        success: "Test was succesfully updated"
+      destroy:
+        success: "Test was succesfully destroyed"      
+      index:
+        header: "Tricky Tests"
+        new_test: "New test"        
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        choice: "Are you sure?"
+      show:
+        header: "Test title: «%{title}»"
+        level: "Level: %{level}"
+        questions: "Questions:"
+        new_question: "New question"
+        title: "Title"
+        actions: "Actions"
+        edit: "Edit"
+        back: "Back"
+      new:
+        create: "Create new test"
+        back: "Back"
+      edit:
+        header: "Edit Test «%{title}»"
+        back: "Back"
+
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed TestGuru test!"
