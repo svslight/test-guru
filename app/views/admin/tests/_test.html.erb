@@ -2,11 +2,11 @@
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.size %></td>
-  <td><%= link_to t('.show'), admin_test_path(test) %></td>
-  <td><%= link_to t('.edit'), edit_admin_test_path(test) %></td>
+  <td><%= link_to t('.show'), admin_test_path(test), class: 'btn btn-sm btn-outline-primary' %></td>
+  <td><%= link_to t('.edit'), edit_admin_test_path(test), class: 'btn btn-sm btn-outline-primary' %></td>
   <td><%= link_to t('.delete'),
     admin_test_path(test),
     method: :delete,
-    data: { confirm: t('.choice') } %>
+    data: { confirm: t('.choice') }, class: 'btn btn-sm btn-outline-primary' %>
   </td>
 </tr>

@@ -53,15 +53,22 @@ en:
     select:
       prompt: "Choose category"
 
-  layouts:
-    application:
-      welcome: "Welcome! %{user_name} Guru"
-      log_out: "Log out"
+  # layouts:
+  #   application:
+  #     welcome: "Welcome! %{user_name} Guru"
+  #     log_out: "Exit"
 
   shared:
-    header:
-      sign_up: "Sign up"
-      log_in: "log in"
+    nav:
+      welcome: "Welcome! %{user_name} Guru"
+      admin_panel: "Admin panel"
+      log_out: "Exit"
+      sign_up: "Sign Up"
+      log_in: "Log In"
+
+    # header:
+    #   sign_up: "Sign Up"
+    #   log_in: "Log In"
     errors:
       header:
         one: "%{count} error detected"
@@ -93,11 +100,11 @@ en:
 
   admin:
     nav:
-      header: "Admin panel TestGuru."
+      header: "Admin panel: %{admin_name}"
       welcome: "Welcome!"
       admin_panel: "Admin panel"
       guru: "Guru"
-      logout: "Exit"
+      log_out: "Exit"
 
     questions:
       question:
