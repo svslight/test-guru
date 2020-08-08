@@ -61,8 +61,8 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
       new:
-        header: "Sign up TestGuru"
-        sign_up: "Sign up"
+        header: "SignUp TestGuru"
+        sign_up: "Sign Up"
         characters_min: "%{length} characters minimum"        
 
     sessions:
@@ -71,12 +71,13 @@ en:
       already_signed_out: "Signed out successfully."
       new:
         header: "Enter TestGuru"
-        login: "Log in"
+        login: "Log In"
+        remember_me: "Remember!"
+        enter_email: "Enter email"
+        password: "Password"
 
     shared:
       links:
-        login: "Log in"
-        sign_up: "Sign up"
         forgot: "Forgot your password?"
         confirm_instruction: "Did not receive confirmation instructions?"
         unlock_instruction: "Did not receive unlock instructions?"

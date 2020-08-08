@@ -4,7 +4,7 @@ ru:
       user:
         first_name: "Имя"
         last_name: "Фамилия"
-        email: "Элетронная почта"
+        email: "Электронная почта"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         remember_me: "Запомнить меня"
@@ -59,7 +59,7 @@ ru:
       updated: "Ваша учётная запись успешно изменена."
       new:
         header: "Регистрация в TestGuru"
-        sign_up: "Зарегистрироваться"
+        sign_up: "Регистрация"
         characters_min: "%{length} символов минимально"
 
     sessions:
@@ -69,11 +69,12 @@ ru:
       new:
         header: "Вход в TestGuru"
         login: "Авторизоваться"
+        remember_me: "Запомнить!"
+        enter_email: "Введите email"
+        password: "Пароль"
 
     shared:
       links:
-        login: "Авторизоваться"
-        sign_up: "Регистрация"
         forgot: "Забыли свой пароль?"
         confirm_instruction: "Не получили подтверждение инструкции?"
         unlock_instruction: "Не получили инструкции по разблокировке?"

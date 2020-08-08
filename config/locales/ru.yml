@@ -21,15 +21,23 @@ ru:
     select:
       prompt: "Выбери категорию"
 
-  layouts:
-    application:
-      welcome: "Добро пожаловать! %{user_name} Гуру"
-      log_out: "Выход"  
+  # layouts:
+  #   application:
+  #     welcome: "Добро пожаловать! %{user_name} Гуру"
+  #     log_out: "Выход"  
 
   shared:
-    header:
+    nav:
+      welcome: "Добро пожаловать! %{user_name} Гуру"
+      admin_panel: "Панель Админа"      
+      log_out: "Выйти"
       sign_up: "Регистрация"
       log_in: "Вход"
+
+    # header:
+    #   sign_up: "Регистрация"
+    #   log_in: "Вход"
+
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -63,11 +71,11 @@ ru:
 
   admin:
     nav:
-      header: "Панель администратора TestGuru."
+      header: "Панель администратора: %{admin_name}"
       welcome: "Добро пожаловать!"
       admin_panel: "Панель админа"
       guru: "Гуру"
-      logout: "Выход"
+      log_out: "Выход"
 
     questions:
       question:

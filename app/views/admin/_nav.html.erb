@@ -1,8 +1,9 @@
-<div class="nav nav-admin">
-  <span class="nav-admin title"><%= t('.header') %></span>
 
-  <div class="nav-admin user">
-    <%= t('.welcome') %> <b class="nav-admin user-email"><%= current_user.first_name %></b> <%= t('.guru') %> |
-    <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
-  </div>
-</div>
+<nav class="navbar navbar-dark bg-primary">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand', style: 'color: white' %>
+
+  <span class="navbar-text">
+    <b><%= t('.header', admin_name: current_user.first_name) %></b> |
+    <%= link_to t('.log_out'), destroy_user_session_path, method: :delete, style: 'color: white' %>
+  </span>
+</nav>
