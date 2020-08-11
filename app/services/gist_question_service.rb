@@ -1,7 +1,5 @@
 class GistQuestionService
-  # ROOT_ENDPOINT = 'https://api.github.com'
-  # ACCESS_TOKEN = 'a10f0bfc91db6eade171c25c0951f9bf7c975371'
-
+  
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
