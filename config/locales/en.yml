@@ -66,13 +66,12 @@ en:
       sign_up: "Sign Up"
       log_in: "Log In"
 
-    # header:
-    #   sign_up: "Sign Up"
-    #   log_in: "Log In"
     errors:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+
+  description: "A question about %{title} from TestGuru"        
 
   tests:
     index:
@@ -95,16 +94,21 @@ en:
     show:
       header: "Pass the test on the topic: %{title}"
       counter: "Question № %{number} of %{total}"
+      gist_question: "Gist Question!"
     update:
       completed: "Test completed"
+    gist:
+      success: "Gist was succesfully created! %{gist_url}"
+      failure: "An error occurred while saving gist"
 
   admin:
     nav:
       header: "Admin panel: %{admin_name}"
-      welcome: "Welcome!"
+      welcome: "Welcome!  %{admin_name}"
       admin_panel: "Admin panel"
       guru: "Guru"
       log_out: "Exit"
+      gists_table: "Gists"     
 
     questions:
       question:
@@ -179,6 +183,12 @@ en:
         header: "Edit Test «%{title}»"
         back: "Back"
 
+    gists:
+      index:
+        header: "Gists"
+        question: "Question"
+        gist_url: "Gist url"
+        user: "User Email"
 
   tests_mailer:
     completed_test:

@@ -2,7 +2,7 @@
   <div class="col col-md-6">
 
     <% flash.each do |key, message| %>
-      <div class="alert alert-dark" role="alert">
+      <div class="alert alert-dark" role="alert" style="width: 38rem;">
         <%= content_tag :p, message, class: "flash #{key}", style: 'color: blue' %>
       </div>
     <% end %>
