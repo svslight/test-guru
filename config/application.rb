@@ -24,8 +24,5 @@ module TestGuru
 
     # config.autoload_paths << "#{Rails.root}/lib/clients"
 
-    # config.fog_directory  = ENV['ACCESS_TOKEN']
-    # Dotenv.load Rails.root.join(".env")
-
   end
 end

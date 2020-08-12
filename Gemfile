@@ -34,7 +34,7 @@ gem 'devise', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # NETWORKING
-# gem 'faraday'
+gem 'faraday'
 # gem 'dotenv-rails'
 gem 'octokit', '~> 4.0'
 
