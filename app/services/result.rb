@@ -1,11 +1,10 @@
 class Result
-#   attr_accessor :response
 
   def initialize(client)
     @response = client.last_response
   end
 
   def success?
-    !!@response
+    @response.status == 200 ? true : false
   end
 end
