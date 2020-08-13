@@ -27,8 +27,11 @@
 /storage/*
 !/storage/.keep
 
+/node_modules
 /public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/lib/clients/git_hub_client.rb
+.env

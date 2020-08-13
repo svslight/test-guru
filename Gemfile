@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # it goes as a dependency on the gem device
 # gem 'bcrypt', '~> 3.1.7'
 
+# AUTH
 gem 'devise', '~> 4.0'
 
 # Use Active Storage variant
@@ -32,8 +33,15 @@ gem 'devise', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# NETWORKING
+gem 'faraday'
+# gem 'dotenv-rails'
+gem 'octokit', '~> 4.0'
+
+# LOCALIZATION
 gem 'rails-i18n', '~> 6.0.0'
 
+# UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.5.0'
 gem 'sprockets-rails', '~> 2.3.2'

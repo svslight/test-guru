@@ -34,16 +34,14 @@ ru:
       sign_up: "Регистрация"
       log_in: "Вход"
 
-    # header:
-    #   sign_up: "Регистрация"
-    #   log_in: "Вход"
-
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+
+  description: "Вопрос о %{title} для TestGuru"
 
   tests:
     index:
@@ -66,16 +64,21 @@ ru:
     show:
       header: "Прохождение теста по теме: %{title}"
       counter: "Вопрос № %{number} из %{total}"
+      gist_question: "Gist вопрос!"
     update:
       completed: "Тест завершен"
+    gist:
+      success: "Gist успешно сохранён! %{gist_url}"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     nav:
       header: "Панель администратора: %{admin_name}"
-      welcome: "Добро пожаловать!"
+      welcome: "Добро пожаловать!  %{admin_name}"
       admin_panel: "Панель админа"
       guru: "Гуру"
       log_out: "Выход"
+      gists_table: "Gists"
 
     questions:
       question:
@@ -150,6 +153,13 @@ ru:
       edit:
         header: "Редактировать Тест «%{title}»"
         back: "Назад"
+
+    gists:
+      index:
+        header: "Все Gists"
+        question: "Вопросы"
+        gist_url: "Ссылка на Gists"
+        user: "Почта пользователя"
 
       
 

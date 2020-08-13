@@ -4,6 +4,8 @@
 
   <span class="navbar-text">
     <b><%= t('.header', admin_name: current_user.first_name) %></b> |
+    <%= link_to t('.admin_panel'), admin_tests_path, style: 'color: white' %> | 
+    <%= link_to t('.gists_table'), admin_gists_path, style: 'color: white' %> |  
     <%= link_to t('.log_out'), destroy_user_session_path, method: :delete, style: 'color: white' %>
   </span>
 </nav>
