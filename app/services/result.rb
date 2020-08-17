@@ -4,7 +4,7 @@ class Result
     @response = client.last_response
   end
 
-  def success?
-    @response.status == 200 ? true : false
+  def success?    
+    [200, 201, 202].include?(@response.status) ? true : false
   end
 end
