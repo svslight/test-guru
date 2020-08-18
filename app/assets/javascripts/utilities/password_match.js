@@ -8,7 +8,7 @@ function matchPasswordConfirmation() {
   if (document.getElementById('password-confirmation-field').value == '') {
     document.querySelector('.octicon-thumbsup').classList.add('hide');
     document.querySelector('.octicon-circle-slash').classList.add('hide');
-    return false
+    return
   }
 
   if (document.getElementById('password-field').value != document.getElementById('password-confirmation-field').value) {
