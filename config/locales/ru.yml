@@ -6,7 +6,7 @@ ru:
       create: 'Создать %{model}'
       update: 'Обновить %{model}'
       submit: 'Сохранить %{model}'
-      submit: 'Дальше %{model}'
+      submit: 'Далее %{model}'
 
     label:
       test:
@@ -20,11 +20,6 @@ ru:
         correct: "Верно"
     select:
       prompt: "Выбери категорию"
-
-  # layouts:
-  #   application:
-  #     welcome: "Добро пожаловать! %{user_name} Гуру"
-  #     log_out: "Выход"  
 
   shared:
     nav:
@@ -64,7 +59,8 @@ ru:
     show:
       header: "Прохождение теста по теме: %{title}"
       counter: "Вопрос № %{number} из %{total}"
-      gist_question: "Gist вопрос!"
+      gist_question: "Сохранить вопрос!"
+      submit: Далее
     update:
       completed: "Тест завершен"
     gist:
@@ -122,9 +118,11 @@ ru:
       create:
         success: "Тест создан %{first_name} %{last_name}"
       update:
-        success: "Тест обновлен"
+        success: "Тест был успешно обновлён!"
+      update_inline:
+        success: "Название Теста было успешно обновлено!"
       destroy:
-        success: "Тест удален"
+        success: "Тест был успешно удален!"
 
       index:
         header: "Доступные Тесты"
@@ -153,15 +151,15 @@ ru:
       edit:
         header: "Редактировать Тест «%{title}»"
         back: "Назад"
+      form_inline:
+        submit: "ОК"
 
     gists:
       index:
         header: "Все Gists"
         question: "Вопросы"
         gist_url: "Ссылка на Gists"
-        user: "Почта пользователя"
-
-      
+        user: "Почта пользователя"    
 
   tests_mailer:
     completed_test:

@@ -1,11 +1,13 @@
 <div class="row justify-content-center mt-3">
-  <div class="col col-md-6">
+  <div class="col col-md-9">
 
     <h2><%= t('.header') %></h2>
 
     <p>
       <%= link_to t('.new_test'), new_admin_test_path, class: 'btn btn-sm btn-outline-primary' %>
     </p>
+
+    <%= render 'shared/errors', resource: @test %>
 
     <table class="table table-hover table-bordered table-sm">
       <thead class="thead-light">
