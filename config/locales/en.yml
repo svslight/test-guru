@@ -53,11 +53,6 @@ en:
     select:
       prompt: "Choose category"
 
-  # layouts:
-  #   application:
-  #     welcome: "Welcome! %{user_name} Guru"
-  #     log_out: "Exit"
-
   shared:
     nav:
       welcome: "Welcome! %{user_name} Guru"
@@ -94,12 +89,13 @@ en:
     show:
       header: "Pass the test on the topic: %{title}"
       counter: "Question № %{number} of %{total}"
-      gist_question: "Gist Question!"
+      gist_question: "Save Question!"
+      submit: Next
     update:
       completed: "Test completed"
     gist:
       success: "Gist was succesfully created! %{gist_url}"
-      failure: "An error occurred while saving gist"
+      failure: "An error occurred while saving gist"    
 
   admin:
     nav:
@@ -153,6 +149,8 @@ en:
         success: "Test was successfully created %{first_name} %{last_name}"
       update:
         success: "Test was succesfully updated"
+      update_inline:
+        success: "Test Title was succesfully updated"
       destroy:
         success: "Test was succesfully destroyed"      
       index:
@@ -182,6 +180,8 @@ en:
       edit:
         header: "Edit Test «%{title}»"
         back: "Back"
+      form_inline:
+        submit: "OK"
 
     gists:
       index:

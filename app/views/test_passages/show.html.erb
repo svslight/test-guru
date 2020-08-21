@@ -7,10 +7,14 @@
       </div>
 
       <div class="card text-center">
-        <div class="card-body">    
-          <h6 class="card-subtitle mb-2 text-muted"><%= t('.counter', number: @test_passage.number_question, total: @test_passage.total_questions) %></h6>
-          <h5 class="card-title"><%= @test_passage.current_question.body %></h5>      
+        <div class="card-body">
+          <h5 class="card-title"><%= @test_passage.current_question.body %></h5> 
+          <h6 class="card-subtitle mb-2 text-muted"><%= t('.counter', number: @test_passage.number_question, total: @test_passage.total_questions) %></h6>               
         </div>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar"></div>
       </div>
 
       <div class="card">
@@ -24,7 +28,12 @@
             <% end %>
 
             <p><%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post %></p>
-            <p><%= form.submit %></p>
+
+            <p><%= form.submit t('.submit'), 
+              class: 'btn btn-primary bt-sm mt-3',
+              data: { progress: (@test_passage.number_question - 1) * 100 / @test_passage.total_questions },
+              class: 'progress_bar' %>
+            </p>
           <% end %>
         </div>
       </div>
