@@ -13,10 +13,8 @@ Test.delete_all
 Category.delete_all
 User.delete_all
 
-users = User.create([
-  { email: 'admin@yandex.ru', name: 'admin', password: 'admin'},
-  { email: 'user@yandex.ru', name: 'user', password: 'user'}
-])
+users = User.create!([{ first_name: 'Lana', last_name: 'Svetlana', email: 'lana@example.com', password: 'password', type: "Admin" },
+  { first_name: 'Svetlana', last_name: 'Lana', email: 'svetlana@example.com', password: 'password' }])
 
 categories = Category.create([
   { title: 'Frontend' },
@@ -27,14 +25,14 @@ tests = Test.create([
   { title: 'Ruby', level: 1, author_id: users[0].id, category_id: categories[0].id }, 
   { title: 'CSS/HTML', level: 0, author_id: users[0].id, category_id: categories[0].id },
   { title: 'JavaScript', level: 1, author_id: users[0].id, category_id: categories[1].id },
-  # { title: 'PHP', level: 1, author_id: users[0].id, category_id: categories[1].id },
-  # { title: 'Python', level: 1, author_id: users[0].id, category_id: categories[1].id },
-  # { title: 'Java', level: 2, author_id: users[0].id, category_id: categories[1].id },
-  # { title: 'R', level: 3, author_id: users[0].id, category_id: categories[1].id },
-  # { title: 'Swift', level: 4, author_id: users[0].id, category_id: categories[1].id },
-  # { title: 'Go', level: 5, author_id: users[0].id, category_id: categories[1].id },
-  # { title: 'C', level: 5, author_id: users[0].id, category_id: categories[1].id },
-  # { title: 'C++', level: 5, author_id: users[0].id, category_id: categories[1].id }  
+  { title: 'PHP', level: 1, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'Python', level: 1, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'Java', level: 2, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'R', level: 3, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'Swift', level: 4, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'Go', level: 5, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'C', level: 5, author_id: users[0].id, category_id: categories[1].id },
+  { title: 'C++', level: 5, author_id: users[0].id, category_id: categories[1].id }  
 ])
 
 questions = Question.create([  
