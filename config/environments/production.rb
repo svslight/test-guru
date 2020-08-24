@@ -62,14 +62,14 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'agile-castle-20258.herokuapp.com' }
+  # config.action_mailer.default_url_options = { host: 'agile-castle-20258.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default :charset => "utf-8"
+  # config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
     adress:               'smtp.gmail.com',
     port:                 587,
-    domain:               "agile-castle-20258.herokuapp.com",
+    # domain:               "agile-castle-20258.herokuapp.com",
     user_name:            ENV['SMTP_USERNAME'],
     password:             ENV['SMTP_PASSWORD'],
     authentication:       'plain',
@@ -123,3 +123,6 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+end
