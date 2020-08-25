@@ -13,8 +13,7 @@ Test.delete_all
 Category.delete_all
 User.delete_all
 
-users = User.create!([{ first_name: 'Lana', last_name: 'Svetlana', email: 'lana@example.com', password: 'password', type: "Admin" },
-  { first_name: 'Svetlana', last_name: 'Lana', email: 'svetlana@example.com', password: 'password' }])
+users = User.create!([{ first_name: 'Lana', last_name: 'Svetlana', email: 'svslight@gmail.com', password: 'password', type: "Admin" }])
 
 categories = Category.create([
   { title: 'Frontend' },

@@ -53,6 +53,14 @@ en:
     select:
       prompt: "Choose category"
 
+  feedbacks:
+    new:
+      header: "Write to us if you have any questions..."
+      body: "Question"
+      send: "Send"
+    create: 
+      feedback_create: "The message is sent to the administrator's email address"
+
   shared:
     nav:
       welcome: "Welcome! %{user_name} Guru"

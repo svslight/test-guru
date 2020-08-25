@@ -8,6 +8,7 @@ ru:
       submit: 'Сохранить %{model}'
       submit: 'Далее %{model}'
 
+
     label:
       test:
         title: "Название"
@@ -21,10 +22,19 @@ ru:
     select:
       prompt: "Выбери категорию"
 
+  feedbacks:
+    new:
+      header: "Напишите нам, если у вас есть вопросы..."
+      body: "Сообщение"
+      send: "Отправить"
+    create: 
+      feedback_create: "Сообщение отправлено на почту администратора!"
+
   shared:
     nav:
       welcome: "Добро пожаловать! %{user_name} Гуру"
-      admin_panel: "Панель Админа"      
+      admin_panel: "Панель Админа"
+      feedback: "Обратная связь"  
       log_out: "Выйти"
       sign_up: "Регистрация"
       log_in: "Вход"
@@ -75,6 +85,7 @@ ru:
       guru: "Гуру"
       log_out: "Выход"
       gists_table: "Gists"
+      feedback: "Сообщения пользователей"
 
     questions:
       question:
