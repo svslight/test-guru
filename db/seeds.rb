@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 TestPassage.delete_all
+Gist.delete_all
+Feedback.delete_all
 Answer.delete_all
 Question.delete_all
 Test.delete_all

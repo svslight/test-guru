@@ -5,7 +5,7 @@ class Test < ApplicationRecord
 
   has_many :questions, dependent: :destroy
 
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
   validates :title, presence: true, uniqueness: { scope: :level }
