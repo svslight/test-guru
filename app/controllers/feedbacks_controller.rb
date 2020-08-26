@@ -1,4 +1,5 @@
 class FeedbacksController < ApplicationController
+  layout :resolve_layout
 
   def index
     @feedbacks = Feedback.all
@@ -17,10 +18,13 @@ class FeedbacksController < ApplicationController
     else
       render :new
     end
-
   end
 
   private
+
+  def resolve_layout
+    action_name == "index" ? "admin" : "application"
+  end
 
   def feedback_params
     params.require(:feedback).permit(:body)
