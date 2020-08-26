@@ -21,7 +21,7 @@ class TestPassagesController < ApplicationController
         render :show
       end
     else
-      redirect_to @test_passage, notice: "Чтобы перейти к следующему вопросу, требуется выбрать хотя бы на один ответ!"
+      redirect_to @test_passage, notice: "Требуется ответить, чтобы перейти к следующему вопросу!!!"
     end
 
   end
