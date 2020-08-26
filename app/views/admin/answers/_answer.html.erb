@@ -1,9 +1,9 @@
 <li>
   <%= answer.body %><br>
-  <%= link_to t('.show'), admin_answer_path(answer) %> |
-  <%= link_to t('.edit'), edit_admin_answer_path(answer) %> |
+  <%= link_to t('.show'), admin_answer_path(answer), class: 'btn btn-sm btn-outline-primary' %> 
+  <%= link_to t('.edit'), edit_admin_answer_path(answer), class: 'btn btn-sm btn-outline-primary' %> 
   <%= link_to t('.delete'), 
     admin_answer_path(answer),
     method: :delete,
-    data: { confirm: t('.choice') } %>
+    data: { confirm: t('.choice') }, class: 'btn btn-sm btn-outline-primary' %>
 </li>
