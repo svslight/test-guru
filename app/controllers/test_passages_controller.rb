@@ -11,6 +11,10 @@ class TestPassagesController < ApplicationController
   end
 
   def update
+    answer_ids ||= []
+    redirect_to @test_passage,
+      notice: "Требуется ответить, чтобы перейти к следующему вопросу!!!" and return # if !params[:answer_ids].present?
+
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?

@@ -5,7 +5,7 @@ class Test < ApplicationRecord
 
   has_many :questions, dependent: :destroy
 
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
   validates :title, presence: true, uniqueness: { scope: :level }
@@ -15,6 +15,7 @@ class Test < ApplicationRecord
   scope :mid, -> { where(level: 2..4).order(level: :asc) }
   scope :hard, -> { where(level: 5..Float::INFINITY).order(level: :asc) }  
   scope :get_category_tests, ->(name) { joins(:category).where(categories: {title: name}) }
+  scope :with_questions, -> { joins(:questions).distinct }
 
   def self.order_by(name)
     get_category_tests(name).order(title: :desc).pluck(:title)

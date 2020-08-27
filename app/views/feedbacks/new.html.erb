@@ -1,0 +1,20 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-9">
+
+    <h3><%= t('.header') %></h3>
+
+    <%= form_with model: @feedback, local: true do |form| %>
+      <div class="form-group">
+        <%= render 'shared/errors', resource: @feedback %>
+
+        <p>
+          <%= form.label :body, t('.body') %>
+          <%= form.text_area :body, id: :feedback_body, class: 'form-control' %>
+        </p>
+
+        <p><%= form.submit t('.send'), class: 'btn btn-primary' %></p>
+
+      </div>
+    <% end %>
+  </div>
+</div>

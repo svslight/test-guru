@@ -2,10 +2,14 @@
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand', style: 'color: white' %>
 
     <span class="navbar-text">
-      <% if user_signed_in?%>
+      <% if user_signed_in? %>
         <b><%= t('.welcome', user_name: current_user.first_name) %></b> |
+
         <%= link_to t('.admin_panel'), admin_tests_path if current_user.admin? %> |
+        
+        <%= link_to t('.feedback'), new_feedback_path %> |
         <%= link_to t('.log_out'), destroy_user_session_path, method: :delete %>
+        
       <% else %>
         <%= link_to t('.log_in'), new_user_session_path %> |
         <%= link_to t('.sign_up'), new_user_registration_path %>

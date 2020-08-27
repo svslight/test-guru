@@ -1,16 +1,22 @@
-<h1><%= t('.header', title: @question.test.title) %></h1>
+<div class="row justify-content-center mt-3">
+  <div  class="col col-md-9">
 
-<p>
-  <%= @question.body %>
-</p>
+    <h1><%= t('.header', title: @question.test.title) %></h1>
 
-<h2><%= t('.answers') %></h2>
+    <p>
+      <%= @question.body %>
+    </p>
 
-<%= link_to t('.new_answer'), new_admin_question_answer_path(@question) %>
+    <h2><%= t('.answers') %></h2>
 
-<ol>
-  <%= render @question.answers %>   
-</ol>
+    <%= link_to t('.new_answer'), new_admin_question_answer_path(@question), class: 'btn btn-sm btn-outline-primary' %>
 
-<%= link_to t('.edit'), edit_admin_question_path(@question) %> |
-<%= link_to t('.back'), admin_test_path(@question.test) %>
+    <ol class="list-group-item mt-3">
+      <%= render @question.answers %>   
+    </ol>
+
+    <%= link_to t('.edit'), edit_admin_question_path(@question), class: 'btn btn-sm btn-primary' %> 
+    <%= link_to t('.back'), admin_test_path(@question.test), class: 'btn btn-sm btn-primary' %>
+
+  </div>
+</div>
