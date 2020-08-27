@@ -3,7 +3,7 @@ class TestsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tests = Test.joins(:questions).distinct
+    @tests = Test.with_questions
   end
 
   def start

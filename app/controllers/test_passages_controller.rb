@@ -11,19 +11,18 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    if  params[:answer_ids].present?
-      @test_passage.accept!(params[:answer_ids])
+    answer_ids ||= []
+    redirect_to @test_passage,
+      notice: "Требуется ответить, чтобы перейти к следующему вопросу!!!" and return # if !params[:answer_ids].present?
 
-      if @test_passage.completed?
-        TestsMailer.completed_test(@test_passage).deliver_now
-        redirect_to result_test_passage_path(@test_passage)
-      else
-        render :show
-      end
+    @test_passage.accept!(params[:answer_ids])
+
+    if @test_passage.completed?
+      TestsMailer.completed_test(@test_passage).deliver_now
+      redirect_to result_test_passage_path(@test_passage)
     else
-      redirect_to @test_passage, notice: "Требуется ответить, чтобы перейти к следующему вопросу!!!"
+      render :show
     end
-
   end
 
   def gist
