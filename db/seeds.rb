@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-TestPassage.delete_all
+
 Badge_rules.delete_all
 Badges.delete_all
 Badges_users.delete_all
 
+TestPassage.delete_all
 Gist.delete_all
 Feedback.delete_all
 Answer.delete_all
@@ -76,6 +77,6 @@ answers = Answer.create([
   { body: 'Да, имеет прямой доступ к ОС', correct: false, question_id: questions[5].id }
 ])
 
-badge_rules = Badge_rules.create([])
-badges = Badges.create([])
-badges_users = Badges_users.create([])
+# badge_rules = Badge_rules.create([])
+# badges = Badges.create([])
+# badges_users = Badges_users.create([])
