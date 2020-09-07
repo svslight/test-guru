@@ -6,10 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-BadgeRule.delete_all
-Badge.delete_all
 BadgesUser.delete_all
+Badge.delete_all
+BadgeRule.delete_all
 
 TestPassage.delete_all
 Gist.delete_all
