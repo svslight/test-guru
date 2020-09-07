@@ -4,6 +4,8 @@ en:
       test: "Test"
       question: "Question"
       answer: "Answer"
+      badge_rule: "Rule"
+      badge: "Badge"
 
     attributes:
       test:

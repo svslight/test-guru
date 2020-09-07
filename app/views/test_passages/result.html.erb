@@ -1,21 +1,46 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-6">
 
-    <div class="card text-center" style="width: 28rem;">
+    <div class="card text-center">
       <div class="card-header">
        <h3><%= t('.header', title: @test_passage.test.title ) %></h3>
       </div>   
 
       <div class="card-body">
         <% if  @test_passage.success? %>
-          <span class='success'><%= t('.congratulations', percent: @test_passage.percent_correct_answers ) %></span>
+          <div class='success'>
+            <%= t('.congratulations', percent: @test_passage.percent_correct_answers ) %>           
+          </div><br>          
+          
+          <% if @new_badges.present? %>
+            <% @new_badges.each do |badge| %>
+              <div><%= image_tag(badge.image, width: '50') %></div><br>
+              <div><%= t('.badge', rule: BadgeRule.badge_description(badge)) %></div>                       
+            <% end %>
+          <% end %>
+
+          <hr>
+          <div>
+            <div><%= 'Все ваши достижения:' %></div><br>
+            <% Badge.winned_badges(current_user).each do |badge| %>
+              <%= image_tag(badge.image, width: '30', hspace: '3') %>
+            <% end %>
+          </div>
+          <div>
+            <% Badge.winned_badges(current_user).each do |badge| %>
+              <span style="margin: 5px 15px 0px 15px;">
+                <%= BadgesUser.where(user_id: current_user.id, badge_id: badge.id).take.count_badges %>
+              </span>
+            <% end %>
+          </div>
+          
         <% else %>
           <span class='failure'><%= t('.lose', percent: @test_passage.percent_correct_answers ) %></span>
         <% end %>
       </div>
 
       <div class="card-footer">
-        <p><%= link_to t('.back'), tests_path, class: 'btn btn-sm btn-primary' %></p>
+        <p><%= link_to t('.back'), tests_path, class: 'btn btn-sm btn-primary mt-2' %></p>
       </div>
     </div>
   </div>

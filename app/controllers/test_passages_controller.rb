@@ -8,21 +8,32 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    if params[:new_badge_ids].present?
+      @new_badges = []
+      params[:new_badge_ids].each do |id|
+        @new_badges << Badge.find(id)
+      end
+    end
   end
 
   def update
-    answer_ids ||= []
     redirect_to @test_passage,
-      notice: "Требуется ответить, чтобы перейти к следующему вопросу!!!" and return # if !params[:answer_ids].present?
+      notice: "Требуется ответить, чтобы перейти к следующему вопросу!!!" and return if !params[:answer_ids].present?
 
-    @test_passage.accept!(params[:answer_ids])
-
-    if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now
+    @test_passage.accept!(params[:answer_ids])    
+    
+    render :show and return if !@test_passage.completed?
+  
+    @new_badge_ids = Badge.granting(current_user, @test_passage) if @test_passage.success?
+  
+    if @new_badge_ids.empty?
       redirect_to result_test_passage_path(@test_passage)
     else
-      render :show
+      redirect_to result_test_passage_path(@test_passage, new_badge_ids: @new_badge_ids)
     end
+
+    TestsMailer.completed_test(@test_passage).deliver_now
+
   end
 
   def gist

@@ -4,6 +4,8 @@ ru:
       test: "Тест"
       question: "Вопрос"
       answer: "Ответ"
+      badge_rule: "Правило"
+      badge: "Награду"
 
     attributes:
       test:

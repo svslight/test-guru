@@ -2,8 +2,8 @@ class TestsController < ApplicationController
 
   before_action :authenticate_user!
 
-  def index
-    @tests = Test.with_questions
+  def index    
+    @tests = Test.order_by_category
   end
 
   def start
