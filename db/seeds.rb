@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 TestPassage.delete_all
+Badge_rules.delete_all
+Badges.delete_all
+Badges_users.delete_all
+
 Gist.delete_all
 Feedback.delete_all
 Answer.delete_all
@@ -49,6 +53,7 @@ test_passages = TestPassage.create([
   # { user_id: users[0].id, test_id: tests[0].id, current_question_id: questions[0].id},
 ])
 
+
 answers = Answer.create([
   { body: 'Объект', correct: true, question_id: questions[0].id },
   { body: 'Скалярное значение', correct: false, question_id: questions[0].id },
@@ -70,3 +75,7 @@ answers = Answer.create([
   { body: 'Не имеет прямой доступ к ОС', correct: true, question_id: questions[5].id },
   { body: 'Да, имеет прямой доступ к ОС', correct: false, question_id: questions[5].id }
 ])
+
+badge_rules = Badge_rules.create([])
+badges = Badges.create([])
+badges_users = Badges_users.create([])
