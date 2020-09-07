@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Badge_rules.delete_all
-Badges.delete_all
-Badges_users.delete_all
+BadgeRule.delete_all
+Badge.delete_all
+BadgesUser.delete_all
 
 TestPassage.delete_all
 Gist.delete_all
@@ -76,7 +76,3 @@ answers = Answer.create([
   { body: 'Не имеет прямой доступ к ОС', correct: true, question_id: questions[5].id },
   { body: 'Да, имеет прямой доступ к ОС', correct: false, question_id: questions[5].id }
 ])
-
-# badge_rules = Badge_rules.create([])
-# badges = Badges.create([])
-# badges_users = Badges_users.create([])
