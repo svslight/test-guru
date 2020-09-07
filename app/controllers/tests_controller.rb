@@ -12,4 +12,9 @@ class TestsController < ApplicationController
     current_user.tests.push(@test)
     redirect_to current_user.test_passage(@test), notice: t('.begin', title:@test.title)
   end
+
+  def clean
+    TestPassage.all.each{ |rec| rec.destroy  }
+    BadgesUser.all.each{ |rec| rec.destroy  }
+  end
 end
