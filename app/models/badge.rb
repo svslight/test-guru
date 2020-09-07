@@ -16,7 +16,7 @@ class Badge < ApplicationRecord
   validates :title, presence: true, uniqueness: true
 
   scope :winned_badges, ->(user) { find(user.badges_users.pluck(:badge_id)) }
-  scope :find_badge_id, ->(rule, level) { where(badge_rule_id: BadgeRule.find_by(rule: rule), level: level).take.id }
+  scope :find_badge_id, ->(rule, level) { where(badge_rule_id: BadgeRule.find_by(rule: rule).id, level: level).take.id }
   
   def self.user_badges(user)
     @user_badges = []    
@@ -61,7 +61,7 @@ class Badge < ApplicationRecord
     def self.new_badge(user, rule, level=nil)
       badge_id = Badge.find_badge_id(rule, level)
 
-      if BadgesUser.exists?(user_id: user.id, badge_id: badge_id)      
+      if BadgesUser.exists?(user_id: user.id, badge_id: badge_id)
         @new_badge = BadgesUser.where(user_id: user.id, badge_id: badge_id).take
       else
         @new_badge = BadgesUser.new(user_id: user.id, badge_id: badge_id, count_badges: 0)
