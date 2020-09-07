@@ -13,7 +13,7 @@ class Badge < ApplicationRecord
   has_many :badges_users, dependent: :destroy
   has_many :users, through: :badges_users
   
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: true  
 
   scope :winned_badges, ->(user) { find(user.badges_users.pluck(:badge_id)) }
   scope :find_badge_id, ->(rule, level) { where(badge_rule_id: BadgeRule.find_by(rule: rule).id, level: level).take.id }

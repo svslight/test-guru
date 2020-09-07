@@ -20,7 +20,7 @@
 
     <p>
       <%= form.label :level %><br>
-      <%= form.select :level, Test.levels + [nil], {}, class: "form-control" %> 
+      <%= form.select :level, Test.levels + [nil], {prompt: 'Выбрать из списка'}, class: "form-control" %> 
     </p><br>
 
     <p><%= form.submit %></p>
