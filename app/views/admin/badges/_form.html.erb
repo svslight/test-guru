@@ -14,13 +14,13 @@
     </p>
 
     <p>
-      <%= form.label :badge_rule_id %><br>
-      <%= form.collection_select :badge_rule_id, BadgeRule.all, :id, :rule, prompt: true, class: "form-control" %>
+      <%= form.label :rule_type %><br>
+      <%= form.select :rule_type, Badge::RULE_TYPES, {prompt: 'Выбрать из списка'}, class: "form-control" %>
     </p>
 
     <p>
-      <%= form.label :level %><br>
-      <%= form.select :level, Test.levels + [nil], {prompt: 'Выбрать из списка'}, class: "form-control" %> 
+      <%= form.label :rule_value %><br>
+      <%= form.select :rule_value, Badge::RULE_VALUES, {prompt: 'Выбрать из списка'}, class: "form-control" %> 
     </p><br>
 
     <p><%= form.submit %></p>

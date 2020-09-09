@@ -7,16 +7,17 @@ class TestPassagesController < ApplicationController
   def show
   end
 
-  def result   
-    @new_badge_ids = BadgeService.new(@test_passage).find_badges if @test_passage.success?
-
-    if @new_badge_ids.present?
-      @new_badges = []
-      @new_badge_ids.each do |id|
-        @new_badges << Badge.find(id)
+  def result    
+    if @test_passage.success?
+      @test_passage.update(passed: true)
+      @badges = BadgeService.new(@test_passage).get_badges
+      if @badges.present?
+        current_user.badges.push(@badges)
+        flash[:notice] = t('.badge')
       end
-    end    
+    end
   end
+
 
   def update
     redirect_to @test_passage,

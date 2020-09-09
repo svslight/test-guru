@@ -12,27 +12,12 @@
             <%= t('.congratulations', percent: @test_passage.percent_correct_answers ) %>           
           </div><br>          
           
-          <% if @new_badges.present? %>
-            <% @new_badges.each do |badge| %>
+          <% if @badges.present? %>
+            <% @badges.each do |badge| %>
               <div><%= image_tag(badge.image, width: '50') %></div><br>
-              <div><%= t('.badge', rule: BadgeRule.badge_description(badge)) %></div>                       
+              <div><%= t('.badge') %></div>                       
             <% end %>
           <% end %>
-
-          <hr>
-          <div>
-            <div><%= 'Все ваши достижения:' %></div><br>
-            <% Badge.winned_badges(current_user).each do |badge| %>
-              <%= image_tag(badge.image, width: '30', hspace: '3') %>
-            <% end %>
-          </div>
-          <div>
-            <% Badge.winned_badges(current_user).each do |badge| %>
-              <span style="margin: 5px 15px 0px 15px;">
-                <%= BadgesUser.where(user_id: current_user.id, badge_id: badge.id).take.count_badges %>
-              </span>
-            <% end %>
-          </div>
           
         <% else %>
           <span class='failure'><%= t('.lose', percent: @test_passage.percent_correct_answers ) %></span>

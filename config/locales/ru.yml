@@ -18,14 +18,11 @@ ru:
       answer:
         body: "Ответ"
         correct: "Верно"
-      badge_rule:
-        rule: "Правило"
-        description: "Описание"
       badge:
         title: "Название"
         image: "Изображение"
-        badge_rule_id: "Правило"
-        level: "Уровень сложности"
+        rule_type: "Правила"
+        rule_value: "Описание"
     select:
       prompt: "Выбрать из списка"
 
@@ -74,7 +71,7 @@ ru:
     result:
       header: "Тест %{title} успешно завершён!"
       congratulations: "Поздравляем! Тест пройден успешно на %{percent} %"
-      badge: "Вы получили награду за «%{rule}»"
+      badge: "Вы получили награду!!!»"
       lose: "Тест не пройден! Процент успеха составил: %{percent} %"
       back: "Cписок Тестов"
     show:
@@ -95,7 +92,8 @@ ru:
       badges_all: "Все существующие награды"
       title_badge: "Правила"
       back: "Вернуться к Тестам"
-      level: "Уровень сложности"
+      rule_type: "Правила"
+      rule_value: "Описание"
     show: 
       you_header: "Уровень Ваших достижений"
       you_badge: "Награды"
@@ -104,33 +102,7 @@ ru:
       level: "Уровень сложности"
       back: "Вернуться к Тестам"
 
-  admin:
-    badge_rules:
-      index:
-        header: "Правила выдачи наград"
-        new_rule: "Новое правило"
-        actions: "Действия"
-        description: "Описание"
-        rule: "Правило"
-      new:
-        create: "Создать новое правило"
-        back: "Назад"
-      edit:
-        header: "Редактировать правило «%{rule}»" 
-        back: "Назад"
-
-      badge_rule:
-        show: "Просмотреть"
-        edit: "Редактировать"
-        delete: "Удалить"
-        choice: "Вы уверены?"
-      create:
-        success: "Правило создано!"
-      update:
-        success: "Правило успешно обновлёно!"
-      destroy:
-        success: "Правило успешно удалено!"
-      
+  admin:      
     badges:
       new:         
         create: "Создать новую Награду"
@@ -142,6 +114,8 @@ ru:
         image: "Изображения"
         title: "Награды за пройденные тесты"
         level: "Уровень сложности"
+        rule_type: "Правила"
+        rule_value: "Описание"
       edit:
         header: "Редактировать Награду" 
         back: "Назад"
@@ -167,7 +141,6 @@ ru:
       log_out: "Выход"
       gists_table: "Сохраненные вопросы"
       feedback: "Список отзывов"
-      badge_rule: "Правила выдачи наград"
       badge: "Список наград"
 
     questions:
