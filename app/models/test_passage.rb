@@ -7,9 +7,9 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: [ :create, :update ]
 
-  scope :fault_test?, ->(user, test) { exists?(user_id: user.id, test_id: test.id, current_question_id: nil, correct_question: 0..(test.questions.length - 1)) }
-  scope :success_test?, ->(user, test) { where(user_id: user.id, test_id: test.id, current_question_id: nil).take.success? }
-  scope :count_success_tests, ->(user, test) { where(user_id: user.id, test_id: test.id, current_question_id: nil, correct_question: test.questions.length).length }
+  scope :fault_test, ->(user, test) { where(user_id: user.id, test_id: test.id, current_question_id: nil, correct_question: 0..(test.questions.length - 1)) }
+  scope :success_test, ->(user, test) { where(user_id: user.id, test_id: test.id, current_question_id: nil).take }
+  scope :count_success_tests, ->(user, test) { where(user_id: user.id, test_id: test.id, current_question_id: nil, correct_question: test.questions.length) }
 
   def completed?
     current_question.nil?

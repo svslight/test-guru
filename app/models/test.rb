@@ -15,14 +15,14 @@ class Test < ApplicationRecord
   scope :mid, -> { where(level: 2..4).order(level: :asc) }
   scope :hard, -> { where(level: 5..Float::INFINITY).order(level: :asc) }  
   scope :get_category_tests, ->(name) { joins(:category).where(categories: {title: name}) }
-  scope :order_by_category_admin, -> { joins(:category).order("categories.title ASC") }
-  scope :order_by_category, -> { where(id: with_questions.pluck(:id)).joins(:category).order("categories.title ASC") }
+ 
+  scope :with_category_admin, -> { joins(:category) }
+  scope :with_category, -> { where(id: with_questions.pluck(:id)).joins(:category) }
   scope :with_questions, -> { joins(:questions).distinct }
   scope :levels, -> { select(:level).distinct.pluck(:level).sort }
-  scope :test_backend_ids_for, ->(user) { get_category_tests('Backend').joins(:test_passages).where(test_passages: {user_id: user.id, current_question_id: nil}).pluck(:id) }
-  # scope :test_attempt_ids_for, ->(user) { get_category_tests('Backend').joins(:test_passages).where(test_passages: {user_id: user.id, current_question_id: nil}).pluck(:id) }
+  scope :test_backend_ids_for, ->(user) { get_category_tests('Backend').joins(:test_passages).where(test_passages: {user_id: user.id, current_question_id: nil}) }
   
-  def self.order_by(name)
-    get_category_tests(name).order(title: :desc).pluck(:title)
-  end
+  # def self.order_by(name)
+  #   get_category_tests(name).order(title: :desc).pluck(:title)
+  # end
 end

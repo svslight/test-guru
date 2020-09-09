@@ -7,13 +7,15 @@ class TestPassagesController < ApplicationController
   def show
   end
 
-  def result
-    if params[:new_badge_ids].present?
+  def result   
+    @new_badge_ids = BadgeService.new(@test_passage).find_badges if @test_passage.success?
+
+    if @new_badge_ids.present?
       @new_badges = []
-      params[:new_badge_ids].each do |id|
+      @new_badge_ids.each do |id|
         @new_badges << Badge.find(id)
       end
-    end
+    end    
   end
 
   def update
@@ -24,15 +26,9 @@ class TestPassagesController < ApplicationController
     
     render :show and return if !@test_passage.completed?
   
-    @new_badge_ids = Badge.granting(current_user, @test_passage) if @test_passage.success?
-  
-    if @new_badge_ids.empty?
-      redirect_to result_test_passage_path(@test_passage)
-    else
-      redirect_to result_test_passage_path(@test_passage, new_badge_ids: @new_badge_ids)
-    end
+    redirect_to result_test_passage_path(@test_passage)
 
-    TestsMailer.completed_test(@test_passage).deliver_now
+    # TestsMailer.completed_test(@test_passage).deliver_now
 
   end
 

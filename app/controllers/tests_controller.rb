@@ -3,7 +3,7 @@ class TestsController < ApplicationController
   before_action :authenticate_user!
 
   def index    
-    @tests = Test.order_by_category
+    @tests = Test.with_category.order("categories.title ASC")
   end
 
   def start
