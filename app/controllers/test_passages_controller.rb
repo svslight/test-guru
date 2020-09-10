@@ -29,7 +29,7 @@ class TestPassagesController < ApplicationController
   
     redirect_to result_test_passage_path(@test_passage)
 
-    TestsMailer.completed_test(@test_passage).deliver_now
+    # TestsMailer.completed_test(@test_passage).deliver_now
 
   end
 
