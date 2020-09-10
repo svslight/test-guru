@@ -7,22 +7,30 @@ class TestPassagesController < ApplicationController
   def show
   end
 
-  def result
+  def result    
+    if @test_passage.success?
+      @test_passage.update(passed: true)
+      @badges = BadgeService.new(@test_passage).get_badges
+      if @badges.present?
+        current_user.badges.push(@badges)
+        flash[:notice] = t('.badge')
+      end
+    end
   end
 
+
   def update
-    answer_ids ||= []
     redirect_to @test_passage,
-      notice: "Требуется ответить, чтобы перейти к следующему вопросу!!!" and return # if !params[:answer_ids].present?
+      notice: "Требуется ответить, чтобы перейти к следующему вопросу!!!" and return if !params[:answer_ids].present?
 
-    @test_passage.accept!(params[:answer_ids])
+    @test_passage.accept!(params[:answer_ids])    
+    
+    render :show and return if !@test_passage.completed?
+  
+    redirect_to result_test_passage_path(@test_passage)
 
-    if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now
-      redirect_to result_test_passage_path(@test_passage)
-    else
-      render :show
-    end
+    # TestsMailer.completed_test(@test_passage).deliver_now
+
   end
 
   def gist

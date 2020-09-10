@@ -60,7 +60,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def find_tests
-    @tests = Test.all
+    @tests = Test.with_category_admin.order("categories.title ASC")
   end
   
   def find_test

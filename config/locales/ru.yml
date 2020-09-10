@@ -1,5 +1,5 @@
 ru:
-  hello: "Привет мир"
+  hello: "Привет, Мир!"
 
   helpers:
     submit:
@@ -7,7 +7,6 @@ ru:
       update: 'Обновить %{model}'
       submit: 'Сохранить %{model}'
       submit: 'Далее %{model}'
-
 
     label:
       test:
@@ -19,8 +18,13 @@ ru:
       answer:
         body: "Ответ"
         correct: "Верно"
+      badge:
+        title: "Название"
+        image: "Изображение"
+        rule_type: "Правила"
+        rule_value: "Описание"
     select:
-      prompt: "Выбери категорию"
+      prompt: "Выбрать из списка"
 
   feedbacks:
     new:
@@ -33,8 +37,10 @@ ru:
   shared:
     nav:
       welcome: "Добро пожаловать! %{user_name} Гуру"
-      admin_panel: "Панель Админа"
-      feedback: "Обратная связь"  
+      admin_panel: "Панель Администратора"
+      badge: "Список наград"
+      you_badge: "Ваши награды"
+      feedback: "Оставить отзыв"  
       log_out: "Выйти"
       sign_up: "Регистрация"
       log_in: "Вход"
@@ -53,7 +59,8 @@ ru:
       header: "Доступные Тесты"
       title: "Название"
       level: "Уровень"
-      questions: "Вопросы"
+      questions: "Кол. Вопросов"
+      category: "Категория"
       actions: "Действия"
     start:
       begin: "Начался тест '%{title}'"
@@ -64,28 +71,77 @@ ru:
     result:
       header: "Тест %{title} успешно завершён!"
       congratulations: "Поздравляем! Тест пройден успешно на %{percent} %"
+      badge: "Вы получили награду!!!»"
       lose: "Тест не пройден! Процент успеха составил: %{percent} %"
       back: "Cписок Тестов"
     show:
-      header: "Прохождение теста по теме: %{title}"
-      counter: "Вопрос № %{number} из %{total}"
+      header: "Прохождение теста по теме: «%{title}»"
+      counter: "Вопрос № %{number} из «%{total}»"
       gist_question: "Сохранить вопрос!"
-      submit: Далее
+      submit: "Далее"
     update:
       completed: "Тест завершен"
+      new_awards: "Вы получили новые награды!"
     gist:
-      success: "Gist успешно сохранён! %{gist_url}"
+      success: "Gist успешно сохранён! Ссылка для просмотра: «%{gist_url}»"
       failure: "Во время сохранения gist произошла ошибка"
 
-  admin:
+  badges:
+    index:      
+      image: "Награды"  
+      badges_all: "Все существующие награды"
+      title_badge: "Правила"
+      back: "Вернуться к Тестам"
+      rule_type: "Правила"
+      rule_value: "Описание"
+    show: 
+      you_header: "Уровень Ваших достижений"
+      you_badge: "Награды"
+      count_badge: "Кол.пройденных Тестов"
+      title_badge: "Правила"
+      level: "Уровень сложности"
+      back: "Вернуться к Тестам"
+
+  admin:      
+    badges:
+      new:         
+        create: "Создать новую Награду"
+        back: "Назад"
+      index:
+        header: "Список всех Наград"
+        new_badge: "Создать Награду"
+        actions: "Действия"
+        image: "Изображения"
+        title: "Награды за пройденные тесты"
+        level: "Уровень сложности"
+        rule_type: "Правила"
+        rule_value: "Описание"
+      edit:
+        header: "Редактировать Награду" 
+        back: "Назад"
+      
+      badge:
+        show: "Просмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        choice: "Вы уверены?"
+
+      create:
+        success: "Награда создана!"
+      update:
+        success: "Награда успешно обновлена!"
+      destroy:
+        success: "Награда успешно удалена!"
+
     nav:
-      header: "Панель администратора: %{admin_name}"
+      header: "Администратор: %{admin_name}"
       welcome: "Добро пожаловать!  %{admin_name}"
-      admin_panel: "Панель админа"
+      admin_panel: "Панель администратора"
       guru: "Гуру"
       log_out: "Выход"
-      gists_table: "Gists"
-      feedback: "Сообщения пользователей"
+      gists_table: "Сохраненные вопросы"
+      feedback: "Список отзывов"
+      badge: "Список наград"
 
     questions:
       question:
@@ -140,7 +196,8 @@ ru:
         new_test: "Новый тест"        
         title: "Название"
         level: "Уровень"
-        questions: "Вопросы"
+        questions: "Кол. Вопросов"
+        category: "Категория"
         actions: "Действия"
       test:        
         show: "Просмотреть"

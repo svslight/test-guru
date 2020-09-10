@@ -13,11 +13,13 @@ class Test < ApplicationRecord
 
   scope :easy, -> { where(level: 0..1).order(level: :asc) }
   scope :mid, -> { where(level: 2..4).order(level: :asc) }
-  scope :hard, -> { where(level: 5..Float::INFINITY).order(level: :asc) }  
-  scope :get_category_tests, ->(name) { joins(:category).where(categories: {title: name}) }
+  scope :hard, -> { where(level: 5..Float::INFINITY).order(level: :asc) } 
+  
+  scope :by_category, ->(category) { joins(:category).where(categories: { title: category }) }
+  scope :by_level, ->(level) { where(level: level) }
+ 
+  scope :with_category_admin, -> { joins(:category) }
+  scope :with_category, -> { where(id: with_questions.pluck(:id)).joins(:category) }
   scope :with_questions, -> { joins(:questions).distinct }
-
-  def self.order_by(name)
-    get_category_tests(name).order(title: :desc).pluck(:title)
-  end
+  scope :levels, -> { select(:level).distinct.pluck(:level).sort }
 end

@@ -1,0 +1,27 @@
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-9">
+
+    <h3><%= t('.you_header') %></h3>
+
+    <table class="table table-hover table-bordered table-sm">
+      <thead class="thead-light">
+        <tr>
+          <th><%= t('.you_badge') %></th>
+          <th><%= t('.title_badge') %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @user_badges.each do |badge| %>
+          <tr>
+            <td class="text-center"><%= image_tag badge.image, width: '50' %></td>
+            <td><%= badge.title %></td>      
+          </tr>
+        <% end %>
+
+      </tbody>
+
+    </table>
+    <%= link_to t('.back'), tests_path, class: 'btn btn-info' %>
+  </div>
+</div>

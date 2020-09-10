@@ -1,10 +1,13 @@
-<tr>
-  <td class="align-middle">
+<tr>  
+  <td class="align-middle">    
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
-  <td class="align-middle"><%= test_level(test) %></td>
-  <td class="align-middle"><%= test.questions.size %></td>
+
+  <td class="text-center"><%= test_level(test) %></td>
+  <td class="text-center"><%= test.questions.size %></td>
+  <td class="text-center"><%= test.category.title %></td>
+
   <td class="align-middle">
     <%= link_to t('.show'),
                   admin_test_path(test),

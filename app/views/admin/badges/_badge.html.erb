@@ -1,0 +1,20 @@
+<tr>
+  <td><%= badge.image %></td>
+  <td><%= badge.title %></td>
+  <td><%= badge.rule_type %></td>
+  <td><%= badge.rule_value %></td>
+
+  <td>
+    <%= link_to t('.edit'),
+      edit_admin_badge_path(badge),
+      class: 'btn btn-sm btn-outline-primary' %>
+  </td>
+
+  <td>
+    <%= link_to t('.delete'),
+      admin_badge_path(badge),
+      method: :delete,
+      data: { confirm: t('.choice') },
+      class: 'btn btn-sm btn-outline-primary' %>
+  </td>
+</tr>

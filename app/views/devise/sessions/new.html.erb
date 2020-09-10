@@ -13,12 +13,12 @@
           <div class="form-group">
             <p>
               <!-- %= f.label :email % -->
-              <%= f.email_field :email, autofocus: true, required: true, class: "form-comtrol", placeholder:  t('.enter_email') %>
+              <%= f.email_field :email, autofocus: true, required: true, class: "form-control", placeholder: t('.enter_email') %>
             </p>
 
             <p>
               <!-- %= f.label :password % -->
-              <%= f.password_field :password, autocomplete: "off", required: true, class: "form-comtrol", placeholder: t('.password') %>
+              <%= f.password_field :password, autocomplete: "off", required: true, class: "form-control", placeholder: t('.password') %>
             </p>
 
             <% if devise_mapping.rememberable? %>

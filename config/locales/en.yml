@@ -51,7 +51,7 @@ en:
         correct: "Correct"
 
     select:
-      prompt: "Choose category"
+      prompt: "Choose from list"
 
   feedbacks:
     new:
@@ -106,6 +106,32 @@ en:
       failure: "An error occurred while saving gist"    
 
   admin:
+    badge_rules:
+      index:
+        header: "Badge rules"
+        new_rule: "New BadgeRule"
+        actions: "Actions"
+        description: "Description"
+        rule: "Rule"
+      new:
+        create: "Create a new rule"
+        back: "back"
+      edit:
+        header: "Edit a rule «%{rule}»" 
+        back: "back"
+
+      badge_rule:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        choice: "Are you sure?"
+      create:
+        success: "Rule was successfully created!"
+      update:
+        success: "Rule was successfully updated!"
+      destroy:
+        success: "Rule was successfully destroyed!"
+
     nav:
       header: "Admin panel: %{admin_name}"
       welcome: "Welcome!  %{admin_name}"

@@ -4,9 +4,20 @@
 
   <span class="navbar-text">
     <b><%= t('.header', admin_name: current_user.first_name) %></b> |
-    <%= link_to t('.admin_panel'), admin_tests_path, style: 'color: white' %> | 
-    <%= link_to t('.gists_table'), admin_gists_path, style: 'color: white' %> |
-    <%= link_to t('.feedback'), feedbacks_path, style: 'color: white' %> |
-    <%= link_to t('.log_out'), destroy_user_session_path, method: :delete, style: 'color: white' %>
+    <%= link_to t('.admin_panel'), admin_tests_path, style: 'color: white' %>
   </span>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Действия
+    </button>
+    <div class="dropdown-menu" style="margin-left: -115px;">
+      <%= link_to t('.gists_table'), admin_gists_path, style: 'color: #007bff', class: "dropdown-item" %>
+      <%= link_to t('.feedback'), feedbacks_path, style: 'color: #007bff', class: "dropdown-item" %>
+      <%= link_to t('.badge'), admin_badges_path, style: 'color: #007bff', class: "dropdown-item" %>
+      <div class="dropdown-divider"></div>
+        <%= link_to t('.log_out'), destroy_user_session_path, method: :delete, style: 'color: #007bff', class: "dropdown-item" %>
+      </div>
+    </div>
+  </div>
 </nav>
