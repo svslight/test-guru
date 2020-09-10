@@ -8,7 +8,6 @@
 
 BadgesUser.delete_all
 Badge.delete_all
-BadgeRule.delete_all
 
 TestPassage.delete_all
 Gist.delete_all
@@ -52,7 +51,6 @@ questions = Question.create([
 test_passages = TestPassage.create([
   # { user_id: users[0].id, test_id: tests[0].id, current_question_id: questions[0].id},
 ])
-
 
 answers = Answer.create([
   { body: 'Объект', correct: true, question_id: questions[0].id },
