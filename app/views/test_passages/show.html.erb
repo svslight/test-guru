@@ -16,6 +16,21 @@
       <div class="progress">
         <div class="progress-bar"></div>
       </div>
+          
+      <div class="card shadow-sm mt-4">
+        <div class="card-header">
+          <b>До конца теста осталось</b>
+        </div>
+        <div class="card-body">
+          <% if @test_passage.test.timer == 0 %>
+            <h4 class="text-center">Время не ограниченно!</h4>
+          <% else %>
+            <%= content_tag :h1, class: 'text-center timer', data: { time: @test_passage.end_of_test_time } do %>
+              <span class="minutes"></span>:<span class="seconds"></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
 
       <div class="card">
         <div class="card-body">
@@ -26,6 +41,7 @@
               <%= b.label %>
             </p>
             <% end %>
+            
 
             <p><%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post %></p>
 

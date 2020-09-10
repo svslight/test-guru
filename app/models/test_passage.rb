@@ -32,7 +32,21 @@ class TestPassage < ApplicationRecord
     test.questions.size
   end
 
+  def test_timer_over?
+    return false if test.timer == 0
+    
+    end_of_test_time <= 0
+  end
+
+  def end_of_test_time
+    test_timer - Time.current
+  end
+
   private
+
+  def test_timer
+    created_at + test.timer * 60
+  end
 
   def correct_answer?(answer_ids)
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
@@ -57,4 +71,5 @@ class TestPassage < ApplicationRecord
   def completed_questions
     test.questions.order(:id).where('id < ?', current_question.id)
   end
+
 end

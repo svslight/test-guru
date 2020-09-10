@@ -79,6 +79,7 @@ ru:
       counter: "Вопрос № %{number} из «%{total}»"
       gist_question: "Сохранить вопрос!"
       submit: "Далее"
+      timer: 'Оставшееся время:'
     update:
       completed: "Тест завершен"
       new_awards: "Вы получили новые награды!"
