@@ -3,5 +3,9 @@
   <td class="text-center"><%= test_level(test) %></td>
   <td class="text-center"><%= test.questions.size %></td>
   <td class="text-center"><%= test.category.title %></td>
-  <td class="align-middle"><%= button_to t('.start'), start_test_path(test.id), class: 'btn btn-sm btn-info btn-block' %></td>
+  <td class="align-middle"><%= button_to t('.start'), 
+    start_test_path(test.id),
+     #id: 'start_timer',
+     #onclick: "startTimer('#{}'); return false",
+    class: 'btn btn-sm btn-info btn-block' %></td>
 </tr>

@@ -7,6 +7,7 @@
   <td class="text-center"><%= test_level(test) %></td>
   <td class="text-center"><%= test.questions.size %></td>
   <td class="text-center"><%= test.category.title %></td>
+  <td class="text-center"><%= test.timer == 0 ? 'Без времени' : test.timer %></td>
 
   <td class="align-middle">
     <%= link_to t('.show'),

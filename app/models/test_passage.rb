@@ -32,29 +32,44 @@ class TestPassage < ApplicationRecord
     test.questions.size
   end
 
+  # def test_timer_over?
+  #   return false if test.timer == 0
+    
+  #   end_of_test_time <= 0
+  # end
+
+  def end_of_test_time
+    test_timer - Time.current
+  end
+
   private
 
-  def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
-  end
-
-  def correct_answers
-    current_question.answers.correct
-  end
-
-  def before_validation_set_first_question
-    if current_question.nil?
-      self.current_question = test.questions.first if test.present?
-    else
-      self.current_question = remaining_questions.first
+    def test_timer
+      created_at + test.timer * 60
     end
-  end
 
-  def remaining_questions
-    test.questions.order(:id).where('id > ?', current_question.id)
-  end
-  
-  def completed_questions
-    test.questions.order(:id).where('id < ?', current_question.id)
-  end
+    def correct_answer?(answer_ids)
+      correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    end
+
+    def correct_answers
+      current_question.answers.correct
+    end
+
+    def before_validation_set_first_question
+      if current_question.nil?
+        self.current_question = test.questions.first if test.present?
+      else
+        self.current_question = remaining_questions.first
+      end
+    end
+
+    def remaining_questions
+      test.questions.order(:id).where('id > ?', current_question.id)
+    end
+    
+    def completed_questions
+      test.questions.order(:id).where('id < ?', current_question.id)
+    end
+
 end
